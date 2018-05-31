@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: report-generator
+Implementation-Version: 1.0.0
+Built-By: HORCHANI
+Implementation-Vendor-Id: com.vds.ibm
+Build-Jdk: 1.8.0_151
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/report-generator
+Created-By: Maven Integration for Eclipse
+

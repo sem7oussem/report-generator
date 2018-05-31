@@ -1,0 +1,6 @@
+com\vds\ibm\batch\JobCompletionNotificationListener.class
+com\vds\ibm\config\BatchConfiguration$1.class
+com\vds\ibm\ReportGeneratorLanucher.class
+com\vds\ibm\bean\WowConnection.class
+com\vds\ibm\batch\WowConnectionItemProcessor.class
+com\vds\ibm\config\BatchConfiguration.class

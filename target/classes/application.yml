@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:ingestion
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+ioc:
+  datasource:
+    url: jdbc:db2://10.71.130.233:50000/IOCDB
+    username: db2i1own
+    password: ChangeM3N0w!
+    driver-class-name: com.ibm.db2.jcc.DB2Driver
