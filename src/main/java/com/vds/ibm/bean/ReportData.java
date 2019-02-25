@@ -12,16 +12,16 @@ import lombok.NoArgsConstructor;
 public class ReportData {
 	Integer loginCount ;
 	Date lastLogin;
-	ArrayList <String> detailedConnections;
+	//ArrayList <String> detailedConnections;
 	
 	
 	public ReportData(Integer loginCount, Date lastLogin , String detailedConnection) {
 		super();
 		this.loginCount = loginCount;
 		this.lastLogin = lastLogin;
-		this.detailedConnections = new  ArrayList<String>();
-		this.detailedConnections.add(detailedConnection);
-		
+//		this.detailedConnections = new  ArrayList<String>();
+//		this.detailedConnections.add(detailedConnection);
+//		
 	}
 	
 	
@@ -41,22 +41,23 @@ public class ReportData {
 	
 	
 
-	public ArrayList<String> getDetailedConnections() {
-		return detailedConnections;
-	}
-
-
-
-	public void setDetailedConnections(ArrayList<String> detailedConnections) {
-		this.detailedConnections = detailedConnections;
-	}
+//	public ArrayList<String> getDetailedConnections() {
+//		return detailedConnections;
+//	}
+//
+//
+//
+//	public void setDetailedConnections(ArrayList<String> detailedConnections) {
+//		this.detailedConnections = detailedConnections;
+//	}
 
 
 
 	@Override
 	public String toString() {
-		return "Nombre de connexions=" + loginCount + "\nDernière connexion =" + lastLogin + "\nJournal de connexions :\n"
-				+ detailedConnections;
+		return "Nombre de connexions=" + loginCount + "\nDernière connexion =" + lastLogin + "\n";
+//		"Journal de connexions :\n"
+//				+ detailedConnections;
 	}
 	
 }

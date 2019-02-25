@@ -42,10 +42,34 @@ public class JobCompletionNotificationListener extends JobExecutionListenerSuppo
 	public void afterJob(JobExecution jobExecution) {
 		if(jobExecution.getStatus() == BatchStatus.COMPLETED) {
 			log.info("!!! JOB FINISHED! Time to verify the results");
+			String datePattern = "yyyy_MM_dd_HH_mm";
+			DateTimeFormatter formatter = DateTimeFormatter.ofPattern(datePattern).withZone(ZoneOffset.UTC);
+			String exportPath = ".\\" + formatter.format(LocalDateTime.now());
+			try {
+				Files.createDirectories(Paths.get(exportPath));
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			OutputStreamWriter ostw = null;
+			try {
+				ostw = new OutputStreamWriter(new FileOutputStream(exportPath+"\\report.txt"), "UTF-8");
+			} catch (UnsupportedEncodingException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			} catch (FileNotFoundException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 			
+			
+			
+			Writer out = new BufferedWriter(ostw);
 			for(Entry<String, ReportData> entry : wowDataService.getUserCountData().entrySet()) {
 				try {
-					writeEntrySet(entry);
+					
+					out.write(entry.getKey() + " :\n" + entry.getValue().toString());
+					//writeEntrySet(entry);
 				} catch (UnsupportedEncodingException e) {
 					log.error(e.getMessage(), e);
 				} catch (FileNotFoundException e) {
@@ -54,7 +78,12 @@ public class JobCompletionNotificationListener extends JobExecutionListenerSuppo
 					log.error(e.getMessage(), e);
 				}				
 			}
-			
+			    try {
+					out.close();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 		}
 	}
 

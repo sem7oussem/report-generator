@@ -2,6 +2,8 @@ package com.vds.ibm.bean;
 
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -20,6 +22,8 @@ public class WowConnection {
     private String subtype;
     private String data;
     private int value;
+    
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss", timezone="Europe/Paris")
     private Date startTime;
     private Date endTime;
     private Date lastupdate;

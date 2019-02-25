@@ -31,12 +31,12 @@ public class WowDataService {
         } else {
            userCounter ++;
            ReportData journal = userCountermap.get(userId);
-           ArrayList<String>  details = journal.getDetailedConnections();
+           //ArrayList<String>  details = journal.getDetailedConnections();
            journal.setLoginCount(userCounter);
            journal.setLastLogin(loginDate);
-           details.add("userid=" + connectionData.getUserid() + ", action=" + connectionData.getAction() + ", issystemadmin=" + connectionData.isIssystemadmin()
-			+ ", groups=" + connectionData.getGroups() + ", isadmin=" + connectionData.isIsadmin() + ", date= " + loginDate +"\n");
-           journal.setDetailedConnections(details);
+          // details.add("userid=" + connectionData.getUserid() + ", action=" + connectionData.getAction() + ", issystemadmin=" + connectionData.isIssystemadmin()
+//			+ ", groups=" + connectionData.getGroups() + ", isadmin=" + connectionData.isIsadmin() + ", date= " + loginDate +"\n");
+           //journal.setDetailedConnections(details);
            userCountermap.put(userId, journal);
         }
 	}
